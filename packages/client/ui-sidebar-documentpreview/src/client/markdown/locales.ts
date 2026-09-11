@@ -23,3 +23,12 @@ declare module '@deepseek-ai/dsh-client-ui-slots' {
     documentMarkdown: MarkdownPreviewKey
   }
 }
+
+
+/** Brazilian Portuguese markdown preview dictionary. */
+export const ptBR: Record<MarkdownPreviewKey, string> = {
+  'viewer.label': 'Markdown',
+  'code.copy': 'Copiar',
+  'code.copied': 'Copiado',
+  'footnotes': 'Notas de rodapé',
+}

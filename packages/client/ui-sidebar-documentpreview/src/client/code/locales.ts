@@ -21,3 +21,11 @@ export const en = {
   copy: 'Copy',
   copied: 'Copied',
 } satisfies Record<keyof typeof zh, string>
+
+
+/** Brazilian Portuguese code preview dictionary. */
+export const ptBR = {
+  title: 'Código',
+  copy: 'Copiar',
+  copied: 'Copiado',
+} satisfies Record<keyof typeof zh, string>

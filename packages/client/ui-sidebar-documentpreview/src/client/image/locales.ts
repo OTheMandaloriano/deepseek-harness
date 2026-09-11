@@ -25,3 +25,13 @@ declare module '@deepseek-ai/dsh-client-ui-slots' {
     sidebarImage: ImagePreviewKey
   }
 }
+
+
+/** Brazilian Portuguese image preview dictionary. */
+export const ptBR: Record<ImagePreviewKey, string> = {
+  title: 'Imagem',
+  preview: 'Pré-visualização da imagem: {name}',
+  loading: 'Abrindo imagem…',
+  failed: 'Não foi possível exibir esta imagem.',
+  unsupported: 'A pré-visualização da imagem requer o conteúdo completo do arquivo.',
+}

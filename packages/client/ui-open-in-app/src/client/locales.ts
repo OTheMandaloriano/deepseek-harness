@@ -67,3 +67,18 @@ export const en: Record<OpenInAppKey, string> = {
 
 /** Key domain of the `open-in-app` namespace (zh is the source of truth). */
 export type OpenInAppKey = keyof typeof zh
+
+
+/** Brazilian Portuguese dictionary for open in app. */
+export const ptBR: Record<OpenInAppKey, string> = {
+  'open.title': 'Abrir workspace no {app}',
+  'open.tooltip': 'Abrir localmente',
+  'open.error': 'Falha ao abrir',
+  'menu.toggle': 'Escolha um aplicativo para abrir',
+  'menu.aria': 'Abrir com',
+  ...PRODUCT_NAMES,
+  'app.finder': 'Finder',
+  'app.explorer': 'Explorador de Arquivos',
+  'app.filemanager': 'Arquivos',
+  'app.terminal': 'Terminal',
+}

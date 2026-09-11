@@ -87,3 +87,46 @@ export const en: Record<SubagentKey, string> = {
 
 /** Key domain of the `subagent` namespace (zh is the source of truth). */
 export type SubagentKey = keyof typeof zh
+
+
+/** Brazilian Portuguese dictionary for subagents. */
+/** Brazilian Portuguese dictionary for subagents. */
+export const ptBR: Record<SubagentKey, string> = {
+  'diagnostic.corrupt': 'registro de sessão corrompido',
+  'diagnostic.unsupported': 'versão de registro de subagente não suportada',
+  'diagnostic.unavailable': 'registro de sessão temporariamente indisponível',
+  'duration.seconds': '{seconds}s',
+  'duration.minutes': '{minutes}m {seconds}s',
+  'duration.hours': '{hours}h {minutes}m {seconds}s',
+  'duration.days': '{days}d',
+  'duration.daysHours': '{days}d {hours}h',
+  'duration.months': '~{months} meses',
+  'duration.monthsDays': '~{months} meses {days}d',
+  'duration.years': '~{years} anos',
+  'duration.yearsMonths': '~{years} anos {months} meses',
+  'duration.exactDays': '{days}d {hours}h {minutes}m {seconds}s',
+  'duration.exactTitle': 'Duração ativa total: {duration}',
+  'tokens.thousand': '{value}K',
+  'tokens.million': '{value}M',
+  'tokens.total': '{value} tok',
+  'loading.label': 'Carregando subagentes…',
+  'loading.aria': 'Carregando subagentes',
+  'load.error': 'Não foi possível carregar os subagentes',
+  'retry': 'Tentar novamente',
+  'mode.oneShot': 'execução única',
+  'mode.continuable': 'contínuo',
+  'activity.running': 'executando',
+  'activity.inactive': 'não em execução',
+  'branch.collapse': 'Recolher descendentes de {label}',
+  'branch.expand': 'Expandir descendentes de {label}',
+  'count.total.one': '{count} subagente',
+  'count.total.other': '{count} subagentes',
+  'count.running.one': '{count} subagente em execução',
+  'count.running.other': '{count} subagentes em execução',
+  'switcher.aria': 'Alternar subagente: {title}',
+  'tree.aria': 'Sessões de subagente',
+  'readonly.oneShot.title': 'Registro de subagente de execução única',
+  'readonly.title': 'Este subagente é somente leitura no momento',
+  'readonly.oneShot.body': 'Tarefas de execução única não aceitam mensagens adicionais; revise o registro completo aqui.',
+  'readonly.body': 'A sessão pai está offline; reabra-a para continuar enviando mensagens.',
+}

@@ -22,3 +22,14 @@ export const en = {
   'chip.off.title': 'Plan mode off — click to turn on (/plan)',
   'chip.exitFailed': 'Failed to exit plan mode',
 } satisfies Record<PlanKey, string>
+
+
+/** Brazilian Portuguese dictionary for plan mode. */
+export const ptBR: Record<PlanKey, string> = {
+  'chip.label': 'Plano',
+  'chip.on.aria': 'Modo de plano ativado, clique para desativar',
+  'chip.on.title': 'Modo de plano ativado — clique para desativar (/plan off)',
+  'chip.off.aria': 'Modo de plano desativado, clique para ativar',
+  'chip.off.title': 'Modo de plano desativado — clique para ativar (/plan)',
+  'chip.exitFailed': 'Falha ao sair do modo de plano',
+}

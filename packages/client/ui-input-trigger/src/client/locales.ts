@@ -32,3 +32,17 @@ export const en = {
   'crumbs.aria': 'Folder navigation',
   'suggestions.aria': 'Trigger suggestions',
 } satisfies Record<MenuKey, string>
+
+
+/** Brazilian Portuguese dictionary for input trigger. */
+export const ptBR: Record<MenuKey, string> = {
+  'command': 'Comandos',
+  'skill': 'Habilidades',
+  'subagent': 'Subagentes',
+  'loading': 'Carregando…',
+  'drill.aria': 'Navegar na pasta',
+  'drill.hint': 'Navegar na pasta',
+  'drill.key': 'Tab',
+  'crumbs.aria': 'Navegação de pastas',
+  'suggestions.aria': 'Sugestões de gatilho',
+}

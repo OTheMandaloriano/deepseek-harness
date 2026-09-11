@@ -57,3 +57,28 @@ export const en = {
   'error.generic': 'Could not save feedback',
   'error.noteTooLarge': 'The description is too long; shorten it and submit again',
 } satisfies Record<MessageFeedbackKey, string>
+
+
+/** Brazilian Portuguese dictionary for message feedback. */
+export const ptBR: Record<MessageFeedbackKey, string> = {
+  'action.like': 'Boa resposta',
+  'action.likeActive': 'Remover avaliação',
+  'action.dislike': 'Resposta inadequada',
+  'action.dislikeActive': 'Remover avaliação',
+  'dialog.title': 'Enviar feedback',
+  'dialog.categories': 'Categoria do feedback',
+  'dialog.detail': 'Detalhes do feedback',
+  'dialog.hint': 'Adicione detalhes para nos ajudar a melhorar. Seu envio incluirá o registro da conversa atual.',
+  'category.task-result': 'Resultado da tarefa',
+  'category.instruction-following': 'Compreensão e seguimento de instruções',
+  'category.product-interaction': 'Recursos e interação do produto',
+  'category.service-stability': 'Estabilidade e velocidade',
+  'category.resource-cost': 'Uso de recursos e custo',
+  'category.security-privacy-permission': 'Segurança, privacidade e permissões',
+  'category.other': 'Outro',
+  'toast.recorded': 'Obrigado pelo seu feedback!',
+  'error.conflict': 'Este feedback foi alterado em outro local; exibindo o estado mais recente',
+  'error.load': 'Não foi possível carregar o feedback',
+  'error.generic': 'Não foi possível salvar o feedback',
+  'error.noteTooLarge': 'A descrição é muito longa; encurte-a e envie novamente',
+}

@@ -29,9 +29,7 @@ import type { ClientSessionContext } from '@deepseek-ai/dsh-client-ui-input-trig
 import type { PermissionSelect } from '@deepseek-ai/dsh-permission-presets/client'
 import { PermissionRow } from './PermissionRow.tsx'
 import type { PermissionRowInjected } from './PermissionRow.tsx'
-import {
-  accessEn, accessZh, en, zh,
-} from './locales.ts'
+import { accessEn, accessZh, en, zh, ptBR } from './locales.ts'
 import {
   displayPermissionPreset, FULL_ACCESS_PRESET,
 } from './presentation.ts'
@@ -119,7 +117,7 @@ export function apply(ctx: ClientContext): void {
   const sessionFor = (session: ClientSessionContext): SessionFace | undefined =>
     sessions.binding(session.sessionId)?.session
 
-  ctx.effect(() => ctx.locale.register('settings.permission', { zh, en }), 'ui-permission: settings row dictionaries')
+  ctx.effect(() => ctx.locale.register('settings.permission', { zh, en, 'pt-BR': ptBR }), 'ui-permission: settings row dictionaries')
 
   // The shared SettingsScope mirror updates after document commits and reconnects.
   const controller = new PermissionPresetSettingsController(

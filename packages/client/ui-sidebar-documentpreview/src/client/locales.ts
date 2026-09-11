@@ -52,3 +52,26 @@ export const en = {
   'error.unavailable': 'Read failed: {message}',
   retry: 'Retry',
 } satisfies Record<SidebarDocumentPreviewKey, string>
+
+
+/** Brazilian Portuguese dictionary for sidebar document preview. */
+export const ptBR: Record<SidebarDocumentPreviewKey, string> = {
+  loading: 'Lendo…',
+  loadMore: 'Carregar mais',
+  changed: 'O arquivo foi alterado; exibindo o conteúdo anterior.',
+  reloadNow: 'Recarregar',
+  reload: 'Ler o arquivo novamente',
+  'wrap.enable': 'Ativar quebra de linha',
+  'wrap.disable': 'Desativar quebra de linha',
+  'wrap.aria': 'Quebra de linha',
+  openWith: 'Abrir com',
+  'viewer.text': 'Texto simples',
+  resourceUnavailable: 'O serviço de recursos de arquivo está indisponível.',
+  rendererUnavailable: 'O visualizador {name} está indisponível.',
+  'error.notFound': 'Arquivo não encontrado. Pode ter sido movido ou excluído.',
+  'error.tooLarge': 'Esta página excede o limite de {limit} e não pode ser lida.',
+  'error.notText': 'Não é um arquivo de texto; pré-visualização indisponível no momento.',
+  'error.notRegularFile': 'Não é um arquivo comum; não há conteúdo para exibir.',
+  'error.unavailable': 'Falha na leitura: {message}',
+  retry: 'Tentar novamente',
+}

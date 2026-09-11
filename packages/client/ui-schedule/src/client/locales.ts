@@ -49,3 +49,26 @@ export const en: Record<ScheduleCatalogKey, string> = {
 
 /** Key domain of the Schedule catalog namespace. */
 export type ScheduleCatalogKey = keyof typeof zh
+
+
+/** Brazilian Portuguese dictionary for schedule. */
+export const ptBR: Record<ScheduleCatalogKey, string> = {
+  'trigger.one': '{count} lembrete',
+  'trigger.other': '{count} lembretes',
+  'list.aria': 'Lembretes ativos',
+  'status.scheduled': 'Agendado',
+  'status.overdue': 'Atrasado',
+  'frequency.once': 'Uma vez',
+  'frequency.every': 'A cada {value} {unit}',
+  'unit.day.one': 'dia',
+  'unit.day.other': 'dias',
+  'unit.hour.one': 'hora',
+  'unit.hour.other': 'horas',
+  'unit.minute.one': 'minuto',
+  'unit.minute.other': 'minutos',
+  'unit.second.one': 'segundo',
+  'unit.second.other': 'segundos',
+  'relative.now': 'Vence agora',
+  'relative.future': 'em {value} {unit}',
+  'relative.overdue': '{value} {unit} de atraso',
+}

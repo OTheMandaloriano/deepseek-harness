@@ -157,3 +157,74 @@ export const zh: Record<AgentPresetSettingsKey, string> = {
 // Settings plugin list inlines the same fold over this plugin's dictionaries.
 export { presetDisplayText } from '@deepseek-ai/dsh-agent-presets/display'
 export type { PresetDisplaySource, PresetDisplayText } from '@deepseek-ai/dsh-agent-presets/display'
+
+
+/** Brazilian Portuguese copy for agent presets. */
+export const ptBR: Record<AgentPresetSettingsKey, string> = {
+  error: 'Não foi possível carregar as predefinições de agente.',
+  userTrust: 'Personalizado',
+  seatHint: 'Predefinição de agente para a sessão prestes a ser iniciada',
+  headerHint: 'A predefinição de agente que esta sessão executa, definida ao iniciar',
+  nav: 'Predefinições do agente',
+  sectionIntro:
+    'Uma predefinição é a composição de plugins que o agente de uma sessão executa — suas ferramentas, prompts e recursos. '
+    + 'Duplique uma existente e personalize-a ou deixe o agente criar uma para você no modo Criador.',
+  builtIn: 'Nativo',
+  setDefault: 'Definir como padrão',
+  view: 'Visualizar',
+  presetStandardName: 'Modo Padrão',
+  presetStandardDescription:
+    'Agente completo de programação com edição de arquivos, shell, busca de arquivos e web, skills, planejamento, metas, subagentes e workflows.',
+  presetPtcName: 'Modo PTC',
+  presetPtcDescription:
+    'Agente completo de programação sem a ferramenta de workflow; outras ferramentas são expostas através do SDK do modo PTC para que o modelo possa combinar operações de várias etapas em um único programa TypeScript.',
+  presetMinimalName: 'Modo Mínimo',
+  presetMinimalDescription:
+    'Agente de programação de ferramenta única com um shell persistente.',
+  presetCordisName: 'Modo Criador',
+  presetCordisDescription:
+    'Criado para criar predefinições de agente personalizadas, com todos os recursos do modo Padrão, além de inspeção em tempo de execução, experimentos com plugins e orientações para criação de predefinições.',
+  duplicate: 'Duplicar',
+  duplicateUnavailable: 'Esta implantação não possui um diretório gravável de predefinições',
+  delete: 'Excluir',
+  presetId: 'Identificador',
+  presetIdPlaceholder: 'meu-agente',
+  displayName: 'Nome',
+  displayNamePlaceholder: 'Exibido no seletor; padronizado para o identificador',
+  inUse: 'Em uso',
+  selectionOffDefault: 'Padrão',
+  builtInGroup: 'Nativos',
+  customGroup: 'Personalizados',
+  noDescription: 'Sem descrição.',
+  brokenBadge: 'Falha ao carregar',
+  brokenNoCopy: 'Uma predefinição que falhou ao carregar não pode ser duplicada',
+  switchRefused: 'Não foi possível alternar para {name}: {reason}',
+  copyOf: 'Copiado de',
+  composition: 'Composição (agent.cordis.yml)',
+  cancel: 'Cancelar',
+  close: 'Fechar',
+  retry: 'Tentar novamente',
+  copyTitle: 'Duplicar predefinição',
+  copyIntro:
+    'Toda a predefinição é copiada nesta máquina. O identificador se torna o nome do seu diretório e não pode ser alterado posteriormente; todo o resto é editado nos próprios arquivos da predefinição.',
+  create: 'Criar',
+  creating: 'Criando…',
+  creatorDraft: 'Rascunhe uma predefinição personalizada no modo Criador',
+  openLocation: 'Abrir pasta',
+  showLocation: 'Mostrar localização',
+  revealedPathLabel: 'Arquivos da predefinição:',
+  idRequired: 'Dê um identificador para a predefinição.',
+  idInvalid: 'Use letras minúsculas, números e hífens, iniciando com uma letra ou número.',
+  idTaken: 'Já existe uma predefinição com este identificador.',
+  deleteTitle: 'Excluir esta predefinição?',
+  deleteDescription:
+    'O diretório da predefinição será excluído. Sessões já em execução continuam funcionando; novas sessões não poderão selecioná-la.',
+  deleteConfirm: 'Excluir',
+  deleting: 'Excluindo…',
+  showPicker: 'Permitir a troca de modos do Agente',
+  showPickerBeta: 'Beta',
+  showPickerDescription:
+    'Quando ativado, permite que novas tarefas escolham os modos Padrão, PTC, Criador, Mínimo e personalizado. Quando desativado, todas as novas tarefas usam o modo padrão (Padrão por padrão; configurável). Afeta apenas novas tarefas.',
+  enablePickerToSetDefault: 'Ative a troca de modos do Agente para escolher um padrão',
+  enablePickerToCreate: 'Ative a troca de modos do Agente para iniciar o modo Criador',
+}

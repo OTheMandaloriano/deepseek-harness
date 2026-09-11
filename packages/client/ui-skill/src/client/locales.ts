@@ -27,3 +27,15 @@ export const en = {
   'row.inspect': 'Inspect',
   'menu.userOnly': 'user-only',
 } satisfies Record<SkillKey, string>
+
+
+/** Brazilian Portuguese dictionary for skills. */
+export const ptBR: Record<SkillKey, string> = {
+  'row.title': 'Habilidade (Skill)',
+  'row.running': 'Carregando habilidade',
+  'row.failed': 'Falha ao carregar habilidade',
+  'row.stopped': 'Carregamento da habilidade interrompido',
+  'row.instructions': 'Instruções',
+  'row.inspect': 'Inspecionar',
+  'menu.userOnly': 'apenas-usuário',
+}

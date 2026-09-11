@@ -23,3 +23,12 @@ declare module '@deepseek-ai/dsh-client-ui-slots' {
     documentHtml: HtmlPreviewKey
   }
 }
+
+
+/** Brazilian Portuguese HTML preview dictionary. */
+export const ptBR: Record<HtmlPreviewKey, string> = {
+  title: 'HTML',
+  frame: 'Pré-visualização do documento HTML',
+  loading: 'Preparando pré-visualização HTML…',
+  failed: 'Não foi possível pré-visualizar este documento HTML.',
+}

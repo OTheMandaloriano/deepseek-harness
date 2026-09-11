@@ -33,3 +33,17 @@ declare module '@deepseek-ai/dsh-client-ui-slots' {
     sidebarPdf: PdfLocaleKey
   }
 }
+
+
+/** Brazilian Portuguese PDF preview dictionary. */
+export const ptBR: Record<PdfLocaleKey, string> = {
+  title: 'PDF',
+  pageImage: 'Página {page} do PDF',
+  loading: 'Abrindo PDF…',
+  rendering: 'Renderizando página…',
+  failed: 'Não foi possível exibir o PDF: {message}',
+  password: 'Este PDF requer senha; pré-visualizações protegidas por senha não são suportadas.',
+  workerFailed: 'O processo de renderização do PDF falhou. Por favor, tente novamente.',
+  unsupported: 'A pré-visualização de PDF requer o conteúdo completo do arquivo.',
+  retry: 'Tentar novamente',
+}

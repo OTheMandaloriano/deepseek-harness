@@ -48,3 +48,18 @@ export const en = {
   'time.months': '{n}mo',
   'time.years': '{n}y',
 } satisfies Record<ReferenceKey, string>
+
+
+/** Brazilian Portuguese dictionary for @ references. */
+export const ptBR: Record<ReferenceKey, string> = {
+  'section.files': 'Arquivos e pastas',
+  'section.sessions': 'Sessões',
+  'candidate.noCwd': '(sem pasta de trabalho)',
+  'crumb.root': 'Workspace',
+  'time.now': 'agora',
+  'time.minutes': '{n}m',
+  'time.hours': '{n}h',
+  'time.days': '{n}d',
+  'time.months': '{n} meses',
+  'time.years': '{n}a',
+}

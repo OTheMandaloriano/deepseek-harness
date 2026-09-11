@@ -71,3 +71,36 @@ export const en = {
   'listbox.aria': '/{command} matches',
   'notice.attachmentsUnsupported': '/{command} does not accept attachments; remove them first',
 } satisfies Record<CommandKey, string>
+
+
+/** Brazilian Portuguese dictionary for commands. */
+export const ptBR: Record<CommandKey, string> = {
+  'section.add': 'Adicionar',
+  'section.commands': 'Comandos',
+  'label.goal': 'Objetivo',
+  'label.plan': 'Plano',
+  'label.feedback': 'Feedback',
+  'label.compact': 'Compactar',
+  'label.permission': 'Permissão',
+  'label.export': 'Exportar',
+  'description.goal': 'Definir ou visualizar o objetivo para uma tarefa longa',
+  'description.plan': 'Entrar ou sair do modo de plano',
+  'description.feedback': 'Registrar feedback sobre esta sessão',
+  'description.compact': 'Compactar o histórico antigo da conversa',
+  'description.permission': 'Alternar a predefinição de permissão (sandbox e aprovação)',
+  'description.export': 'Baixar o log desta sessão como arquivo ZIP',
+  'token.goal': 'objetivo',
+  'token.plan': 'plano',
+  'token.feedback': 'feedback',
+  'token.compact': 'compactar',
+  'token.permission': 'permissao',
+  'token.export': 'exportar',
+  'search.placeholder': 'Buscar…',
+  'search.aria': 'Filtrar opções',
+  'status.loading': 'Carregando opções…',
+  'status.applying': 'Aplicando…',
+  'status.empty': 'Nenhuma opção',
+  'overlay.aria': 'Opções de /{command}',
+  'listbox.aria': 'Correspondências de /{command}',
+  'notice.attachmentsUnsupported': '/{command} não aceita anexos; remova-os primeiro',
+}

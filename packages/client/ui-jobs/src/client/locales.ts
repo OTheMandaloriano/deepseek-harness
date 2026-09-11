@@ -43,3 +43,24 @@ export const en: Record<JobKey, string> = {
 
 /** Key domain of the `job` namespace (zh is the source of truth). */
 export type JobKey = keyof typeof zh
+
+
+/** Brazilian Portuguese dictionary for background jobs. */
+/** Brazilian Portuguese dictionary for background jobs. */
+export const ptBR: Record<JobKey, string> = {
+  'count.live.one': '{count} tarefa em segundo plano em execução',
+  'count.live.other': '{count} tarefas em segundo plano em execução',
+  'count.idle.one': '{count} tarefa em segundo plano',
+  'count.idle.other': '{count} tarefas em segundo plano',
+  'list.aria': 'Tarefas em segundo plano',
+  'status.running': 'executando',
+  'status.stopping': 'parando',
+  'status.completed': 'concluída',
+  'status.killed': 'cancelada',
+  'status.failed': 'falhou',
+  'duration.seconds': '{seconds}s',
+  'duration.minutes': '{minutes}m {seconds}s',
+  'duration.hours': '{hours}h {minutes}m',
+  'duration.title.live': 'Em execução há {duration}',
+  'duration.title.done': 'Levou {duration}',
+}

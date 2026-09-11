@@ -60,3 +60,29 @@ export const en = {
   'blocked.composer': 'This model is unavailable — select one to continue',
   'empty.efforts': 'This model provides no reasoning effort levels.',
 } satisfies Record<ModelKey, string>
+
+
+/** Brazilian Portuguese dictionary for model selection. */
+export const ptBR = {
+  'command.label': 'Modelo',
+  'command.description': 'Selecionar modelo para esta sessão',
+  'option.loadError': 'Erro ao carregar modelo: {message}',
+  'option.deepseekV4Flash.description': 'Rápido, eficiente e otimizado para tarefas cotidianas de codificação.',
+  'option.deepseekV4Pro.description': 'Raciocínio avançado e máxima capacidade para arquitetura de código complexa.',
+  'trigger.fallback': 'Selecionar modelo',
+  'trigger.loading': 'Carregando modelos…',
+  'trigger.selectAria': 'Selecionar modelo',
+  'trigger.aria': 'Selecionar modelo, atual {model}',
+  'trigger.ariaEffort': 'Selecionar modelo, atual {model}, esforço de raciocínio {effort}',
+  'menu.aria': 'Modelo e esforço de raciocínio',
+  'menu.model': 'Modelo',
+  'menu.effort': 'Esforço de raciocínio',
+  'effort.providerDefault': 'Padrão',
+  'status.loading': 'Atualizando catálogo de modelos…',
+  'error.action': 'Falha na operação do modelo: {message}',
+  'action.reload': 'Tentar novamente',
+  'warning.groupLoad': 'Falha ao carregar {name}: {message}',
+  'empty.models': 'Nenhum modelo disponível.',
+  'blocked.composer': 'O modelo atual está indisponível. Por favor, selecione outro.',
+  'empty.efforts': 'O modelo atual não suporta ajuste de esforço de raciocínio.',
+} satisfies Record<ModelKey, string>

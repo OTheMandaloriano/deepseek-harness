@@ -54,3 +54,21 @@ export const en = {
   'error.notDirectory': 'That is not a directory.',
   'error.unavailable': 'Read failed: {message}',
 } satisfies Record<SidebarFilesKey, string>
+
+
+/** Brazilian Portuguese dictionary for sidebar files. */
+export const ptBR = {
+  'type.label': 'Arquivos',
+  'guide.title': 'Arquivos do workspace',
+  'guide.description': 'Navegue pelos arquivos no workspace desta sessão',
+  loading: 'Lendo…',
+  empty: 'Diretório vazio',
+  truncated: 'Muitos arquivos, exibindo apenas alguns.',
+  noWorkspace: 'Esta sessão não possui um diretório de workspace.',
+  reload: 'Recarregar',
+  'entry.other': 'Não é um arquivo ou diretório, portanto não pode ser aberto.',
+  'error.notFound': 'Este diretório não existe mais. Pode ter sido movido ou excluído.',
+  'error.outsideWorkspace': 'Este diretório está fora do workspace e não será lido.',
+  'error.notDirectory': 'Não é um diretório.',
+  'error.unavailable': 'Falha na leitura: {message}',
+} satisfies Record<SidebarFilesKey, string>

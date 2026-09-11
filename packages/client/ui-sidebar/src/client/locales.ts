@@ -20,3 +20,13 @@ export const en = {
   'toggle.collapse': 'Collapse sidebar',
   'panels.label': 'Global panels',
 } satisfies Record<SidebarKey, string>
+
+
+/** Brazilian Portuguese dictionary for sidebar. */
+export const ptBR = {
+  'session.new': 'Nova Sessão',
+  'session.new.label': 'Nova sessão',
+  'toggle.open': 'Abrir barra lateral',
+  'toggle.collapse': 'Recolher barra lateral',
+  'panels.label': 'Painéis globais',
+} satisfies Record<SidebarKey, string>

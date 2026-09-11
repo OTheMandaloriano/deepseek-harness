@@ -20,3 +20,13 @@ export const en = {
   reject: 'Reject',
   allowOnce: 'Allow once',
 } satisfies Record<ApprovalKey, string>
+
+
+/** Brazilian Portuguese dictionary for approvals. */
+export const ptBR: Record<ApprovalKey, string> = {
+  waiting: 'Aguardando aprovação',
+  'detail.aria': 'Detalhes da aprovação',
+  escalation: 'A ferramenta {toolName} solicita execução com privilégios',
+  reject: 'Rejeitar',
+  allowOnce: 'Permitir uma vez',
+}

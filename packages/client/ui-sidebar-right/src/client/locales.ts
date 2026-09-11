@@ -58,3 +58,29 @@ export const en = {
   'tab.guide.title': 'Start',
   'tab.unavailable': 'Nothing here can view this kind of content yet.',
 } satisfies Record<SidebarRightKey, string>
+
+
+/** Brazilian Portuguese dictionary for right sidebar. */
+export const ptBR: Record<SidebarRightKey, string> = {
+  'chrome.expand': 'Abrir barra lateral',
+  'chrome.expandAria': 'Abrir barra lateral direita',
+  'chrome.collapse': 'Recolher barra lateral',
+  'chrome.collapseAria': 'Recolher barra lateral direita',
+  'chrome.toFullscreen': 'Tela cheia',
+  'chrome.exitFullscreen': 'Sair da tela cheia',
+  'dock.emptyPane': 'Painel vazio',
+  'dock.splitPane': 'Dividir',
+  'dock.splitPaneDisabled': 'O limite é de dois painéis',
+  'dock.splitPaneNarrow': 'Largura insuficiente para dividir; aumente a barra lateral',
+  'dock.closeTab': 'Fechar',
+  'dock.addTab': 'Nova aba',
+  'dock.dockFloat': 'Retornar à barra lateral',
+  'dock.closeFloat': 'Fechar',
+  'dock.drop.center': 'Mover para cá',
+  'dock.drop.left': 'Dividir à esquerda',
+  'dock.drop.right': 'Dividir à direita',
+  'dock.drop.top': 'Dividir acima',
+  'dock.drop.bottom': 'Dividir abaixo',
+  'tab.guide.title': 'Início',
+  'tab.unavailable': 'Ainda não é possível visualizar este tipo de conteúdo aqui.',
+}

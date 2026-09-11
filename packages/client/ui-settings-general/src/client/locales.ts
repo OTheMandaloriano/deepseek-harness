@@ -34,3 +34,20 @@ export const en = {
   'connection.reconnect': 'Disconnected, reconnect now',
   'connection.restart': 'Reconnecting automatically, reconnect now',
 } satisfies Record<SettingsKey, string>
+
+
+/** Brazilian Portuguese dictionary for settings general. */
+export const ptBR = {
+  'trigger': 'Configurações',
+  'title': 'Configurações',
+  'close': 'Fechar',
+  'openDocument': 'Abrir arquivo de configuração',
+  'openDocument.error': 'Não foi possível abrir o arquivo de configuração',
+  'general.nav': 'Geral',
+  'connection.error': 'Desconectado',
+  'connection.retry': 'Reconectar agora',
+  'connection.connecting': 'Reconectando',
+  'connection.connected': 'Conectado',
+  'connection.reconnect': 'Desconectado, reconectar agora',
+  'connection.restart': 'Reconectando automaticamente, reconectar agora',
+} satisfies Record<SettingsKey, string>

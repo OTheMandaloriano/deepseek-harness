@@ -87,3 +87,45 @@ export const en: Record<DeliverablesKey, string> = {
 
 /** Union of this namespace's dictionary keys. */
 export type DeliverablesKey = keyof typeof zh
+
+
+/** Brazilian Portuguese dictionary for deliverables. */
+export const ptBR: Record<DeliverablesKey, string> = {
+  'presented.nativeUnavailable': 'Este arquivo não possui caminho local no Host. Visualize-o na barra lateral.',
+  'presented.revealError': 'Não foi possível mostrar no gerenciador de arquivos. Tente novamente.',
+  'presented.directoryError': 'Não foi possível abrir a pasta de destino. Tente novamente.',
+  'presented.directoryOpening': 'Abrindo pasta de destino…',
+  'presented.directoryOpened': 'Abertura da pasta solicitada',
+  'presented.revealed': 'Exibição no gerenciador de arquivos solicitada',
+  'presented.revealing': 'Mostrando no gerenciador de arquivos…',
+  'presented.unavailable': 'Este Host não possui área de trabalho para abrir arquivos ou pastas',
+  'presented.retry': 'Tentar novamente',
+  'presented.hostError': 'Não foi possível ler as informações de desktop do Host',
+  'presented.directory': 'Abrir pasta de destino',
+  'presented.explorer': 'Mostrar no Explorador de Arquivos',
+  'presented.finder': 'Mostrar no Finder',
+  'presented.defaultApp': 'Abrir com aplicativo padrão',
+  'presented.more': 'Mais ações de arquivo para {name}',
+  'presented.action': 'Abrir',
+  'presented.preview': 'Pré-visualizar na barra lateral',
+  'presented.previewButton': 'Abrir {name} na barra lateral',
+  'presented.previewCard': 'Pré-visualizar {name} na barra lateral',
+  'presented.all': 'Todos os {count} arquivos',
+  'presented.expandAria': 'Mostrar todos os {count} arquivos entregues',
+  'presented.collapse': 'Recolher',
+  'presented.collapseAria': 'Recolher arquivos entregues',
+  'presented.opening': 'Abrindo…',
+  'presented.opened': 'Aberto no aplicativo padrão',
+  'presented.error': 'Não foi possível abrir. Clique para tentar novamente.',
+  'presented.file': 'Arquivo',
+  'row.title': 'Arquivos entregues',
+  'row.running': 'Entregando',
+  'row.ok': 'Entregue',
+  'row.error': 'Falha na entrega',
+  'row.stopped': 'Interrompido',
+  'row.inspect': 'Inspecionar chamada',
+  'produced.label': 'Arquivos alterados',
+  'produced.moreOne': '+ 1 arquivo',
+  'produced.more': '+ {count} arquivos',
+  'produced.open': 'Abrir {name}',
+}

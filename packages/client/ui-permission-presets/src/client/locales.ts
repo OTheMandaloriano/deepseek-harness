@@ -61,3 +61,20 @@ export const accessEn = {
   'confirm.cancel': 'Cancel',
   'confirm.enable': 'Enable Full access',
 } satisfies Record<PermissionAccessKey, string>
+
+
+/** Brazilian Portuguese dictionary for permission presets. */
+export const ptBR = {
+  'title': 'Permissão',
+  'description': 'Escolha o modo de permissão padrão para novas sessões',
+  'loading': 'Carregando',
+  'unavailable': 'Indisponível',
+  'preset.readOnly': 'Somente leitura',
+  'preset.workspaceWrite': 'Gravação no workspace',
+  'preset.fullAccess': 'Acesso total',
+  'confirm.title': 'Habilitar acesso total?',
+  'confirm.description': 'O acesso total concede ao modelo permissão irrestrita para executar comandos e alterar arquivos sem confirmação prévia.',
+  'confirm.acknowledge': 'Compreendo os riscos',
+  'confirm.cancel': 'Cancelar',
+  'confirm.enable': 'Habilitar acesso total',
+} satisfies Record<PermissionSettingsKey, string>

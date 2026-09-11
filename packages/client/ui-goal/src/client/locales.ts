@@ -34,3 +34,20 @@ export const en = {
   'action.edit': 'Edit goal',
   'action.clear': 'Clear goal',
 } satisfies Record<GoalKey, string>
+
+
+/** Brazilian Portuguese dictionary for goals. */
+export const ptBR: Record<GoalKey, string> = {
+  'phase.active': 'Objetivo em andamento',
+  'phase.active.disarmed': 'Objetivo inativo',
+  'phase.paused': 'Objetivo pausado',
+  'phase.blocked': 'Objetivo bloqueado',
+  'objective.aria': 'Conteúdo do objetivo',
+  'commandInput.aria': 'Entrada de comando',
+  'action.save': 'Salvar objetivo',
+  'action.cancel': 'Cancelar edição',
+  'action.pause': 'Pausar objetivo',
+  'action.resume': 'Retomar objetivo',
+  'action.edit': 'Editar objetivo',
+  'action.clear': 'Limpar objetivo',
+}
