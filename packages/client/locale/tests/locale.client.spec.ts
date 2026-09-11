@@ -197,7 +197,7 @@ describe('LocaleRuntime', () => {
 
     dispose()
     expect(svc.getLocale().active).toBe('zh')
-    expect(svc.getLocale().locales.map(locale => locale.id)).toEqual(['zh', 'en'])
+    expect(svc.getLocale().locales.map(locale => locale.id)).toEqual(['zh', 'en', 'pt-BR'])
     expect(svc.bind('ns')('hello')).toBe('Hello')
     const revision = svc.getLocale().revision
     dispose()
@@ -273,7 +273,7 @@ describe('LocaleRuntime', () => {
       .toThrow('locale fallback "fr" is not registered')
     expect(() => svc.addLanguage({ id: 'fr', label: 'Français', fallback: 'fr-CA' }))
       .toThrow('fallback cycle')
-    expect(svc.getLocale().locales.map(locale => locale.id)).toEqual(['zh', 'en', 'fr-CA'])
+    expect(svc.getLocale().locales.map(locale => locale.id)).toEqual(['zh', 'en', 'pt-BR', 'fr-CA'])
   })
 
   it('adopts a saved external locale when its definition registers later', () => {
@@ -339,11 +339,11 @@ describe('LocaleRuntime', () => {
   })
 
   it('re-evaluates browser languages as external definitions register and unload', () => {
-    stubLanguages('pt-BR', 'zh-CN')
+    stubLanguages('es-ES', 'zh-CN')
     const { svc } = make()
     expect(svc.getLocale().active).toBe('zh')
-    const dispose = svc.addLanguage({ id: 'pt-BR', label: 'Português (Brasil)', fallback: 'en' })
-    expect(svc.getLocale().active).toBe('pt-BR')
+    const dispose = svc.addLanguage({ id: 'es-ES', label: 'Español', fallback: 'en' })
+    expect(svc.getLocale().active).toBe('es-ES')
     dispose()
     expect(svc.getLocale().active).toBe('zh')
   })
@@ -388,11 +388,12 @@ describe('LocaleRuntime', () => {
     expect(svc.bind('ns2')('onlyZh')).toBe('onlyZh')
   })
 
-  it('starts with exactly the two shipped locales and their fallback relation', () => {
+  it('starts with exactly the three shipped locales and their fallback relation', () => {
     const { svc } = make()
     expect(svc.getLocale().locales).toEqual([
       { id: 'zh', label: '中文', fallback: 'en' },
       { id: 'en', label: 'English' },
+      { id: 'pt-BR', label: 'Português (Brasil)', fallback: 'en' },
     ])
   })
 })

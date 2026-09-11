@@ -6,6 +6,51 @@
 import type { LoaderEntryState } from './loader-status.ts'
 import css from './boot-page.module.css'
 
+/** Resolve boot strings according to stored preference or browser language. */
+function getBootStrings(): { hint: string; failedTitle: string } {
+  let lang = ''
+  try {
+    if (typeof localStorage !== 'undefined') {
+      lang = localStorage.getItem('dsh.locale') || ''
+    }
+  } catch {}
+  if (!lang && typeof navigator !== 'undefined') {
+    const list = navigator.languages || [navigator.language || '']
+    for (const item of list) {
+      const lower = item.toLowerCase()
+      if (lower.startsWith('pt')) {
+        lang = 'pt-BR'
+        break
+      }
+      if (lower.startsWith('zh')) {
+        lang = 'zh'
+        break
+      }
+      if (lower.startsWith('en')) {
+        lang = 'en'
+        break
+      }
+    }
+  }
+  if (lang.startsWith('pt')) {
+    return {
+      hint: 'Carregando plugins…',
+      failedTitle: 'Falha ao carregar plugins',
+    }
+  }
+  if (lang.startsWith('zh')) {
+    return {
+      hint: '正在读取插件…',
+      failedTitle: '插件加载失败',
+    }
+  }
+  return {
+    hint: 'Loading plugins…',
+    failedTitle: 'Failed to load plugins',
+  }
+}
+
+
 /** Create a div with one module class and optional text. */
 function div(className: string | undefined, text?: string): HTMLDivElement {
   const el = document.createElement('div')
@@ -25,6 +70,7 @@ export class BootPage {
   private readonly active = new Set<string>()
   private total = 0
   private failure: string | undefined
+  private readonly bootStrings = getBootStrings()
 
   /**
    * Build and attach the boot page.
@@ -37,7 +83,7 @@ export class BootPage {
     this.wordmark = div(css.wordmark, 'HARNESS')
     this.spinner = div(css.spinner)
     this.spinner.dataset.dshBootSpinner = ''
-    this.hint = div(css.hint, 'Loading plugins…')
+    this.hint = div(css.hint, this.bootStrings.hint)
     this.card.append(this.wordmark, this.spinner, this.hint)
     this.root.append(this.card)
     container.append(this.root)
@@ -89,7 +135,7 @@ export class BootPage {
       return
     }
     const report = div(css.failed)
-    report.append(div(css.failedTitle, 'Failed to load plugins'))
+    report.append(div(css.failedTitle, this.bootStrings.failedTitle))
     for (const id of failed) report.append(div(css.failedItem, id))
     if (this.failure !== undefined) report.append(div(css.failedItem, this.failure))
     this.card.replaceChildren(this.wordmark, report)

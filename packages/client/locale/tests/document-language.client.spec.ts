@@ -93,8 +93,8 @@ describe('document language', () => {
 
   it('uses an external locale definition for the document language', async () => {
     const { locale } = await bench()
-    locale.addLanguage({ id: 'pt-BR', label: 'Português', fallback: 'en' })
-    locale.setLocale('pt-BR')
-    expect(langOf()).toBe('pt-BR')
+    locale.addLanguage({ id: 'es-ES', label: 'Español', fallback: 'en' })
+    locale.setLocale('es-ES')
+    expect(langOf()).toBe('es-ES')
   })
 })

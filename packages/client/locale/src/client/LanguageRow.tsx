@@ -9,6 +9,7 @@ import type { PropsLocale, PropsRuntime, PropsStore } from '@deepseek-ai/dsh-cli
 import { IconChevronDownOutline14, Menu } from '@deepseek-ai/dsh-client-ui-primitives'
 import type {} from '@deepseek-ai/dsh-client-ui-settings/client'
 import type { createLanguageRowStore } from './settings-store.ts'
+import { FLAG_SVGS } from './flags.ts'
 import css from './LanguageRow.module.css'
 
 /** Injected business face: the preference write (t rides the standard locale seat). */
@@ -41,7 +42,19 @@ export function LanguageRow({ t, setLocale, useStore }: LanguageRowComponentProp
       <Menu
         open={open}
         onClose={() => { setOpen(false) }}
-        items={options.map(o => ({ id: o.id, label: o.label }))}
+        items={options.map(o => ({
+          id: o.id,
+          label: (
+            <span className={css.menuItemContent}>
+              <span
+                className={css.menuFlagIcon}
+                aria-hidden="true"
+                dangerouslySetInnerHTML={{ __html: FLAG_SVGS[o.id] || '' }}
+              />
+              <span>{o.label}</span>
+            </span>
+          ),
+        }))}
         selectedId={active}
         onSelect={(id) => {
           setLocale(id)
@@ -57,7 +70,12 @@ export function LanguageRow({ t, setLocale, useStore }: LanguageRowComponentProp
             aria-expanded={open}
             onClick={() => { setOpen(v => !v) }}
           >
-            {activeLabel}
+            <span
+              className={css.flagIcon}
+              aria-hidden="true"
+              dangerouslySetInnerHTML={{ __html: FLAG_SVGS[active] || '' }}
+            />
+            <span>{activeLabel}</span>
             <IconChevronDownOutline14 className={css.chevron} />
           </button>
         )}

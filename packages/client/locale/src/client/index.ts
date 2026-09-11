@@ -18,12 +18,13 @@ import {
   LOCALE_ID_PATTERN, LOCALE_IDS, LOCALE_PREFERENCE_FIELD, LOCALE_SETTINGS_NAMESPACE,
   type BuiltInLocaleId, type LocaleId, type LocaleSettings,
 } from '../locale-settings.ts'
-import { en, zh, type CommonKey } from '../locales/index.ts'
+import { en, zh, ptBR, type CommonKey } from '../locales/index.ts'
 import {
-  en as settingsEn, zh as settingsZh, type SettingsLocaleKey,
+  en as settingsEn, zh as settingsZh, ptBR as settingsPtBR, type SettingsLocaleKey,
 } from '../locales/settings.ts'
 import type { LanguageRowInjected } from './LanguageRow.tsx'
 import { LanguageRow } from './LanguageRow.tsx'
+import { LanguageOnboardingDialog } from './LanguageOnboardingDialog.tsx'
 import { createLanguageRowStore } from './settings-store.ts'
 
 export type { LanguageRowComponentProps, LanguageRowInjected } from './LanguageRow.tsx'
@@ -116,6 +117,7 @@ export const SETTINGS_NS = 'settings.locale'
 const BUILT_IN_LOCALE_METADATA = {
   zh: { label: '中文', fallback: 'en' },
   en: { label: 'English' },
+  'pt-BR': { label: 'Português (Brasil)', fallback: 'en' },
 } as const satisfies Record<BuiltInLocaleId, Omit<LocaleDefinition, 'id'>>
 const BUILT_IN_LOCALES: readonly LocaleDefinition[] = Object.freeze(
   LOCALE_IDS.map(id => Object.freeze({ id, ...BUILT_IN_LOCALE_METADATA[id] })),
@@ -367,7 +369,7 @@ export class LocaleRuntime {
    * @param dicts - complete dictionaries keyed by built-in locale id.
    * @returns disposer removing every locale registered by this call (idempotent).
    */
-  register<N extends Extract<keyof LocaleNamespaceMap, string>>(ns: N, dicts: Record<BuiltInLocaleId, LocaleDictOf<N>>): () => void
+  register<N extends Extract<keyof LocaleNamespaceMap, string>>(ns: N, dicts: Record<'zh' | 'en', LocaleDictOf<N>> & Partial<Record<BuiltInLocaleId, LocaleDictOf<N>>>): () => void
   /**
    * Single-locale untyped form for language-pack contributions and namespaces
    * outside the merge table.
@@ -475,6 +477,11 @@ export class LocaleRuntime {
     localeChanged: boolean,
     locales: readonly LocaleDefinition[] = this.snapshot.locales,
   ): void {
+    try {
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('dsh.locale', active)
+      }
+    } catch {}
     this.snapshot = Object.freeze({
       active,
       locales,
@@ -539,8 +546,8 @@ export const inject = ['slots', 'remote', 'settingsScope']
 export function apply(ctx: ClientContext): void {
   const host = ctx.settingsScope.bind<LocaleSettings>({ namespace: LOCALE_SETTINGS_NAMESPACE })
   const locale = new LocaleRuntime(ctx, host)
-  locale.register(COMMON_NS, { zh, en })
-  locale.register(SETTINGS_NS, { zh: settingsZh, en: settingsEn })
+  locale.register(COMMON_NS, { zh, en, 'pt-BR': ptBR })
+  locale.register(SETTINGS_NS, { zh: settingsZh, en: settingsEn, 'pt-BR': settingsPtBR })
   ctx.provide('locale', locale)
   // The service IS the LocaleFace (bind + getSnapshot/subscribe): install it
   // so the render machinery can synthesize the `t` standard seat.
@@ -579,4 +586,15 @@ export function apply(ctx: ClientContext): void {
     locale: SETTINGS_NS,
     inject: injected,
   }, LanguageRow))
+
+  ctx.slots.inject('settings.onboarding', () => ctx.slots.register({
+    name: 'settings.onboarding',
+    id: 'language-selection',
+    order: -200,
+    inject: () => ({
+      locale,
+      host,
+      t: locale.bind(SETTINGS_NS),
+    }),
+  }, LanguageOnboardingDialog))
 }
